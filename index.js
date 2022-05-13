@@ -1,18 +1,25 @@
 const form = document.querySelector('form');
+const terms = document.querySelector('#terms');
+let errorFound = false;
 
 const displayError = (condition, name, dataset, errorMessage) => {
   const errorDisplay = document.querySelector(`#${name}-error`);
 
   if (condition) {
-    errorDisplay.innerHTML = `${dataset.name} ${errorMessage}`;
+    errorDisplay.innerHTML = `${dataset.name || ''} ${errorMessage}`;
+    errorFound = true;
   } else {
     errorDisplay.innerHTML = '';
   }
 }
 
 const validateNotEmpty = (input) => {
-  const { value, name, dataset } = input;
-  displayError(!value || value === "", name, dataset, 'is required')
+  const { value, name, dataset, type, checked } = input;
+  if (type === 'checkbox') {
+    displayError(!checked, name, dataset, 'You must agree to the Terms and Conditions')
+  } else {
+    displayError(!value || value === "", name, dataset, 'is required')
+  }
 }
 
 const validateEmail = (input) => {
@@ -41,5 +48,15 @@ form.addEventListener('submit', (e) => {
     if (type === 'email') {
       validateEmail(input)
     }
-  })
+  });
+  if(errorFound) return;
+
+  form.reset();
+  const toast = document.querySelector('.toast-message');
+  toast.textContent = 'Registration successful';
+  toast.classList.add('toast-success');
+  const toastTimeOut = setTimeout(() => {
+    toast.classList.remove('toast-success');
+    clearTimeout(toastTimeOut);
+  }, 3000)
 });

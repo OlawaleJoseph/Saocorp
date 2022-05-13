@@ -14,6 +14,11 @@ body {
   height: 100vh
 }
 
+input[type=submit] {
+  border-color: transparent;
+  border-radius: 5px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -58,7 +63,7 @@ input {
   margin: 15px 0;
 }
 
-label {
+.input-label {
   position: absolute;
   top: 10px;
   left: 60px;
@@ -98,4 +103,25 @@ label {
   color: red;
   left: 50px;
   height: 14px;
+}
+
+.toast {
+  position: absolute;
+  right: -100%;
+  top: 10px;
+  background-color: green;
+  transition: all ease-in-out 0.5s;
+  padding: 15px;
+}
+
+.toast {
+  color: #fff;
+}
+
+.toast-success {
+  right: 10px;
+}
+
+.pl-45 {
+  padding-left: 45px;
 }
