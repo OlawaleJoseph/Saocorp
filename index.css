@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh
+}
+
+.text-center {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 500px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex {
+  display: flex
+}
+
+.align-items-center {
+  align-items: center
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-items-start {
+  justify-content: start;
+}
+
+.icons {
+  height: auto;
+  max-width: 40px;
+  margin-right: 10px;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control::placeholder {
+  opacity: 0;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+  top: -9px;
+  background-color: #fff;
+  padding: 0 3px;
+}
+
+.submit-form {
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: blueviolet;
+  color: #fff;
+  font-weight: 700;
+}
+
+.submit-form:disabled {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-control.checkbox {
+  width: 20px;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  left: 50px;
+  height: 14px;
+}
