@@ -1,5 +1,6 @@
 const form = document.querySelector('form');
 const terms = document.querySelector('#terms');
+const submitBtn = document.querySelector('.submit-form');
 let errorFound = false;
 
 const displayError = (condition, name, dataset, errorMessage) => {
@@ -60,3 +61,8 @@ form.addEventListener('submit', (e) => {
     clearTimeout(toastTimeOut);
   }, 3000)
 });
+
+terms.addEventListener('change', (e) => {
+  const { checked } = e.target;
+  submitBtn.disabled = !checked
+})
