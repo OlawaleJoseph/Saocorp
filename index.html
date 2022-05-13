@@ -11,14 +11,14 @@
   <div class="wrapper">
       <h1  class="text-center">Registration</h1>
     <div class="form-wrapper">
-      <form>
+      <form novalidate>
         <div class="form-group position-relative">
           <div class="flex input-wrapper">
             <img class="icons" src="./assets/images/user.png" alt="user icon">
             <input type="text" id="name" name="name" class="form-control" data-name="Hospital name" placeholder="Name">
             <label for="name">Hospital Name</label>
           </div>
-          <small id="name-error" class="error position-relative"></small>
+          <p id="name-error" class="error position-relative"></p>
         </div>
         <div class="form-group position-relative">
           <div class="flex">
@@ -28,7 +28,7 @@
             data-name="Email" placeholder="Email">
             <label for="email">Email</label>
           </div>
-          <small id="email-error" class="error position-relative"></small>
+          <p id="email-error" class="error position-relative"></p>
         </div>
         <div class="form-group position-relative">
           <div class="flex">
@@ -37,7 +37,7 @@
             data-name="Address" placeholder="Address">
             <label for="address">Address</label>
           </div>
-          <small id="address-error" class="error position-relative"></small>
+          <p id="address-error" class="error position-relative"></p>
         </div>
         <div class="form-group position-relative">
           <div class="flex">
@@ -46,7 +46,7 @@
             data-name="Password" placeholder="Password">
             <label for="password">Password</label>
           </div>
-          <small id="password-error"  class="error position-relative"></small>
+          <p id="password-error"  class="error position-relative"></p>
 
         </div>
         <div class="form-group position-relative">
@@ -56,14 +56,14 @@
             data-name="Confirm Password" placeholder="Confirm Password">
             <label for="confirm-password">Confirm Password</label>
           </div>
-          <small id="confirm-password-error"  class="error position-relative"></small>
+          <p id="confirm-password-error"  class="error position-relative"></p>
 
         </div>
 
         <div class="form-group position-relative flex justify-items-start align-items-center">
           <input type="checkbox" id="terms" name="terms" class="form-control checkbox ">
           <label for="terms">I agree to the <a href="#">Terms & conditions</a></label>
-          <small class="error position-relative"></small>
+          <p class="error position-relative"></p>
         </div>
 
         <input class="submit-form" type="submit" value="Register" >

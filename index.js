@@ -1,25 +1,31 @@
 const form = document.querySelector('form');
 
-const validateNotEmpty = (input) => {
-  const { value, name } = input;
-  if (!value || value === "") {
-    const errorDisplay = document.querySelector(`#${name}-error`);
-    errorDisplay.innerHTML = `${input.dataset.name} is required`;
+const displayError = (condition, name, dataset, errorMessage) => {
+  const errorDisplay = document.querySelector(`#${name}-error`);
+
+  if (condition) {
+    errorDisplay.innerHTML = `${dataset.name} ${errorMessage}`;
+  } else {
+    errorDisplay.innerHTML = '';
   }
 }
 
-const validateEmail = (input) => {
+const validateNotEmpty = (input) => {
+  const { value, name, dataset } = input;
+  displayError(!value || value === "", name, dataset, 'is required')
+}
 
+const validateEmail = (input) => {
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const { name, dataset } = input;
+  displayError(!emailRegex.test(input.value), name, dataset, 'is invalid')
 }
 
 const validatePasswords = ({ value, dataset, name }) => {
   const confirmPassword = form.querySelector('#password').value;
-
-  if (value !== confirmPassword) {
-    const errorDisplay = document.querySelector(`#${name}-error`);
-    errorDisplay.innerHTML = `${dataset.name} Does not match`;
-  }
+  displayError(value !== confirmPassword, name, dataset, 'dos not match')
 }
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
