@@ -4,9 +4,77 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Registration</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  
+  <p class="toast toast-message"></p>
+  <div class="wrapper">
+      <h1  class="text-center">Registration</h1>
+    <div class="form-wrapper">
+      <form novalidate>
+        <div class="form-group position-relative">
+          <div class="flex input-wrapper">
+            <img class="icons" src="./assets/images/user.png" alt="user icon">
+            <input type="text" id="name" name="name" class="form-control" data-name="Hospital name" placeholder="Name">
+            <label class="input-label" for="name">Hospital Name</label>
+          </div>
+          <p id="name-error" class="error position-relative"></p>
+        </div>
+        <div class="form-group position-relative">
+          <div class="flex">
+            <img class="icons" src="./assets/images/email.png" alt="user icon">
+
+            <input type="email" id="email" name="email" class="form-control"
+            data-name="Email" placeholder="Email">
+            <label class="input-label" for="email">Email</label>
+          </div>
+          <p id="email-error" class="error position-relative"></p>
+        </div>
+        <div class="form-group position-relative">
+          <div class="flex">
+            <img class="icons" src="./assets/images/address.png" alt="user icon">
+            <input type="text" id="address" name="address" class="form-control"
+            data-name="Address" placeholder="Address">
+            <label class="input-label" for="address">Address</label>
+          </div>
+          <p id="address-error" class="error position-relative"></p>
+        </div>
+        <div class="form-group position-relative">
+          <div class="flex">
+            <img class="icons" src="./assets/images/password.png" alt="user icon">
+            <input type="password" id="password" name="password" class="form-control"
+            data-name="Password" placeholder="Password">
+            <label class="input-label" for="password">Password</label>
+          </div>
+          <p id="password-error"  class="error position-relative"></p>
+
+        </div>
+        <div class="form-group position-relative">
+          <div class="flex">
+            <img class="icons" src="./assets/images/password.png" alt="user icon">
+            <input type="password" id="confirm-password" name="confirm-password" class="form-control"
+            data-name="Confirm Password" placeholder="Confirm Password">
+            <label class="input-label" for="confirm-password">Confirm Password</label>
+          </div>
+          <p id="confirm-password-error"  class="error position-relative"></p>
+
+        </div>
+
+        <div class="form-group position-relative"></div>
+          <div class="position-relative flex justify-items-start align-items-center pl-45">
+            <input type="checkbox" id="terms" name="terms" class="form-control checkbox">
+            <label for="terms">I agree to the <a href="#">Terms & conditions</a></label>
+            <p class="error position-relative"></p>
+          </div>
+          <p id="terms-error" class="error position-relative"></p>
+
+        </div>
+
+        <input class="submit-form" type="submit" value="Register" disabled>
+      </form>
+    </div>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
